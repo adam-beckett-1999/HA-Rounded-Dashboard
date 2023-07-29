@@ -1,0 +1,38 @@
+square: true
+type: grid
+cards:
+  - type: custom:button-card
+    icon: mdi:menu-left
+    aspect_ratio: 1/1
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace/home
+    show_name: false
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--black)
+  - type: grid
+    cards: []
+  - type: grid
+    cards: []
+  - type: grid
+    cards: []
+  - type: grid
+    cards: []
+  - type: custom:button-card
+    icon: mdi:menu-right
+    aspect_ratio: 1/1
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace/kitchen
+    show_name: false
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--black)
+columns: 6
