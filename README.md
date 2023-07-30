@@ -64,3 +64,12 @@ The light scene buttons are simple custom button cards with tap_actions defined 
 [YAML Code](/lighting-scene-button.yaml)
 
 ![image info](images/lighting-scene-button.png)
+
+### 'More information' button card
+This card is a simple button that can be used to show more-info about an entity or to link to a subview. I mostly use these buttons as navigation to a subview containing a full list of entities. 
+
+The below example is configured to go to a hidden subview of the dashboard containing all my smart-lights.
+
+[YAML Code](/more-information-button.yaml)
+
+![image info](images/more-information-button.png)
