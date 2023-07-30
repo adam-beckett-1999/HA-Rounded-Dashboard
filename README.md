@@ -89,3 +89,14 @@ The below example is configured to go to a hidden subview of the dashboard conta
 ---
 
 ### Switch button cards:
+Simple customizable toggle buttons for controlling switch entities or entities with different states. I use these primarily with my smart plugs and outlets. 
+
+These cards also come in 2 different styles with only a minor difference. The smart plugs connected to lamps or light-devices will be yellow when in the 'on' state, and the plugs connected to standard appliances will be green when in the 'on' state.
+
+[YAML Code](/switch-button-light.yaml)
+
+![image info](images/switch-button-light.gif)
+
+[YAML Code](/switch-button-device.yaml)
+
+![image info](images/switch-button-device.gif)
