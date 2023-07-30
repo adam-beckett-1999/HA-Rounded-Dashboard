@@ -29,11 +29,18 @@ The air quality swiper card contains multiple sensor cards showing info like hum
 ![image info](images/air-quality-swiper.gif)
 
 ### Light slider cards
-The light cards come in two forms, for a standard yellow/white light and for a full colour light.
+The light cards come in two forms, for a standard yellow/white light and for a full colour light. The slider controls brightness, and press-and-hold action on the card brings up the more-info panel for the light entity.
 
-Using the below code will make the card square.
+You can use 'aspect_ratio: 1/1' to make the card square. Eg.
 ```
+type: custom:button-card
+name: Ambient Lights
 aspect_ratio: 1/1
+icon: hue:desk-lamp
+entity: light.bedroom_ambient_lights
+tap_action:
+  action: toggle
+  ...
 ```
 
 [YAML Code](/light-card-normal.yaml)
