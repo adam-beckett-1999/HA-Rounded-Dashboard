@@ -14,6 +14,8 @@ The page view buttons allow switching between dashboard views, they can be resiz
 
 ![image info](images/page-view-buttons.png)
 
+---
+
 ### Dashboard header card:
 The header is the centerpiece of each dashboard view. The name, as well as the contents of the pill below can be customized.
 
@@ -21,12 +23,16 @@ The header is the centerpiece of each dashboard view. The name, as well as the c
 
 ![image info](images/dashboard-header.png)
 
+---
+
 ### Air quality swiper card:
 The air quality swiper card contains multiple sensor cards showing info like humidity, CO2 and dust levels from an air quality sensor. The first card is a custom card showing an air quality score, this can be used with something like an Awair AQ sensor or Amazon AQM sensor. In the example, I have my awair air quality score showcased here.
 
 [YAML Code](/air-quality-swiper.yaml)
 
 ![image info](images/air-quality-swiper.gif)
+
+---
 
 ### Light slider cards:
 The light slider cards come in two forms, for a standard yellow/white light and for a full colour light. The slider controls brightness, and press-and-hold action on the card brings up the more-info panel for the light entity.
@@ -58,12 +64,16 @@ In my card layout, light sliders are always placed next to scene button cards in
 
 ![image info](images/full-light-grid-card.png)
 
+---
+
 ### Light scene button cards:
 The light scene buttons are simple custom button cards with tap_actions defined to activate a light scene. I use philips hue, so they call the 'hue.activate_scene' service.
 
 [YAML Code](/lighting-scene-button.yaml)
 
 ![image info](images/lighting-scene-button.png)
+
+---
 
 ### 'More information' button card:
 This card is a simple button that can be used to show more-info about an entity or to link to a subview. I mostly use these buttons as navigation to a subview containing a full list of entities. 
@@ -75,3 +85,5 @@ The below example is configured to go to a hidden subview of the dashboard conta
 ![image info](images/more-information-button.png)
 
 ![image info](images/more-information-button-example.gif)
+
+---
