@@ -3,6 +3,8 @@ This is my adaptation of the Rounded Dashboard created by LE0N on the Home Assis
 
 I've made various tweaks to the styling to suit my preferences, and re-designed some of the cards and created my own in a way that matches the original theme.
 
+![image info](images/dashboard-overview.gif)
+
 ## Theme Elements
 
 ### Page view buttons
