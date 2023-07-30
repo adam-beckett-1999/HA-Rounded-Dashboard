@@ -3,6 +3,10 @@ My home assistant dashboard configuration and elements. Theme can be found here:
 
 ![image info](images/page-view-buttons.png)
 
+![image info](images/dashboard-header.png)
+
+![image info](images/air-quality-swiper.gif)
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
