@@ -73,3 +73,5 @@ The below example is configured to go to a hidden subview of the dashboard conta
 [YAML Code](/more-information-button.yaml)
 
 ![image info](images/more-information-button.png)
+
+![image info](images/more-information-button-example.gif)
