@@ -5,10 +5,13 @@ I've made various tweaks to the styling to suit my preferences, and re-designed 
 
 ## Theme Elements
 
+### Page view buttons
 ![image info](images/page-view-buttons.png)
 
+### Dashboard header
 ![image info](images/dashboard-header.png)
 
+### Air quality swiper card
 ![image info](images/air-quality-swiper.gif)
 
 ## Getting started
