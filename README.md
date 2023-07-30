@@ -133,3 +133,18 @@ These cards also come in 2 different styles with only a minor difference. The sm
 [YAML Code](/switch-button-device.yaml)
 
 ![image info](images/switch-button-device.gif)
+
+---
+
+### Media control button cards:
+When used with Logitech Harmony, these buttons allow switching between activites with a visual indicator of the current activity.
+
+Again, these cards come in 2 different styles. For the power-off card, when everything is powered off, the button will be red. And for the activity cards, the state value changes the card to green to show its active. Examples below:
+
+[YAML Code](/media-activity-off-button.yaml)
+
+![image info](images/media-activity-off-button.gif)
+
+[YAML Code](/media-activity-button.yaml)
+
+![image info](images/media-activity-button.gif)

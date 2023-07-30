@@ -1,0 +1,34 @@
+type: custom:button-card
+icon: mdi:television-off
+aspect_ratio: 1/1
+tap_action:
+  action: call-service
+  service: script.turn_off_tv
+  haptic: medium
+  service_data:
+    activity: TV Off
+entity: select.bedroom_harmony_hub_activities
+show_name: false
+state:
+  - value: power_off
+    styles:
+      card:
+        - background-color: var(--red)
+      img_cell:
+        - border-radius: 100%
+        - width: 75px
+        - height: 75px
+        - top: 0
+        - background-color: ' #e3817a '
+styles:
+  card:
+    - border-radius: 24px
+    - background-color: var(--light-gray)
+  icon:
+    - color: var(--black)
+  img_cell:
+    - border-radius: 100%
+    - width: 75px
+    - height: 75px
+    - top: 0
+    - background-color: ' #dfe2e8 '
