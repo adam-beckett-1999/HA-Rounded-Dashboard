@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'HKNova';
+    src: url('../local/fonts/hknova-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+    font-family: 'HKNova', san serif;
+}
