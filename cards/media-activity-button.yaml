@@ -19,7 +19,7 @@ state:
         - width: 75px
         - height: 75px
         - top: 0
-        - background-color: ' #accc7d '
+        - background-color: var(--green-alt)
 styles:
   card:
     - border-radius: 24px
@@ -31,4 +31,4 @@ styles:
     - width: 75px
     - height: 75px
     - top: 0
-    - background-color: ' #dfe2e8 '
+    - background-color: var(--light-gray-alt)

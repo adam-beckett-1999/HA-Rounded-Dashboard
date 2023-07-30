@@ -18,4 +18,4 @@ styles:
     - width: 75px
     - height: 75px
     - top: 0
-    - background-color: ' #efe6a2 '
+    - background-color: var(--yellow-alt)
