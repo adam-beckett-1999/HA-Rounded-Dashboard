@@ -1,4 +1,5 @@
 # HA Dashboard
+My home assistant dashboard configuration and elements. Theme can be found here: https://community.home-assistant.io/t/rounded-dashboard-guide/543043
 
 ![image info](images/page-view-buttons.png)
 
