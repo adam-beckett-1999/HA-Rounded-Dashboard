@@ -8,6 +8,7 @@ Swipe card
 Layout card
 
 My theme file: [YAML Code](/themes/Rounded.yaml)
+The font used is HK-nova, which needs to be manually installed in /www/fonts/ directory: [Font](https://hanken.co/en-gb/products/hk-nova)
 
 I've made various tweaks to the styling to suit my preferences, and re-designed some of the cards and created my own in a way that matches the original theme.
 
