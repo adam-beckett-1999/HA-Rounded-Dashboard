@@ -8,7 +8,7 @@ I've made various tweaks to the styling to suit my preferences, and re-designed 
 ## Cards & Elements
 
 ### Page view button card:
-Allows switching between dashboard views, they can be resized and aligned as required. I typically leave them at the very top of the dashboard when I use them.
+Allows switching between dashboard views, they can be resized and aligned as required. I typically place them at the very top of the dashboard when I use them.
 
 [YAML Code](/page-view-buttons.yaml)
 
