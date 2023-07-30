@@ -8,9 +8,9 @@ I've made various tweaks to the styling to suit my preferences, and re-designed 
 ### Page view buttons
 The page view buttons allow switching between dashboard views, they can be resized and aligned in any way you choose. I typically leave them at the very top of the dashboard when I use them.
 
-![image info](images/page-view-buttons.png)
+[YAML Code](/page-view-buttons.yaml)
 
-[Page View Buttons](/page-view-buttons.yaml)
+![image info](images/page-view-buttons.png)
 
 ### Dashboard header
 The header is the centerpiece of each dashboard view. The name, as well as the contents of the pill below can be customized.
