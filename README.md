@@ -15,10 +15,14 @@ The page view buttons allow switching between dashboard views, they can be resiz
 ### Dashboard header
 The header is the centerpiece of each dashboard view. The name, as well as the contents of the pill below can be customized.
 
+[YAML Code](/dashboard-header.yaml)
+
 ![image info](images/dashboard-header.png)
 
 ### Air quality swiper card
 The air quality swiper card contains multiple sensor cards showing info like humidity, CO2 and dust levels from an air quality sensor. The first card is a custom card showing an air quality score, this can be used with something like an Awair AQ sensor or Amazon AQM sensor. In the example, I have my awair air quality score showcased here.
+
+[YAML Code](/air-quality-swiper.yaml)
 
 ![image info](images/air-quality-swiper.gif)
 
