@@ -1,0 +1,84 @@
+type: custom:swipe-card
+card_width: calc(100% - 48px)
+start_card: 1
+reset_after: 10
+parameters:
+  effect: slide
+  centeredSlides: false
+  slidesPerView: auto
+  spaceBetween: 16
+  initialSlide: 0
+  pagination:
+    type: bullets
+cards:
+  - type: custom:button-card
+    name: '[[[return states["sensor.bedroom_monitor_awair_score"].state]]]' ### this card is for overall score on air quality (awair score/amazon AQM score)
+    styles:
+      grid:
+        - grid-template-areas: '"n max-score" "l l"'
+        - grid-template-columns: min-content min-content
+      name:
+        - font-size: 40px
+        - color: var(--contrast20)
+      card:
+        - border-radius: 24px
+        - padding: 35px 0 6px 16px
+        - box-sizing: border-box
+        - background: var(--light-gray)
+        - box-shadow: none
+        - width: 155px
+        - height: 162px
+      label:
+        - justify-self: start
+        - font-size: 14px
+        - color: var(--contrast10)
+        - margin-top: '-75px'
+      custom_fields:
+        eenheid:
+          - font-size: 2px
+          - color: var(--contrast9)
+          - margin-bottom: 6px
+          - padding-left: 2px
+    label: Awair Score
+    custom_fields:
+      max-score: '&nbsp;/100'
+    show_label: true
+    tap_action:
+      action: more-info
+      haptic: medium
+  - type: sensor
+    entity: sensor.bedroom_monitor_humidity
+    hours_to_show: 24
+    detail: 1
+    graph: line
+    name: Humidity
+    icon: none
+    card_mod:
+      class: graph
+  - type: sensor
+    entity: sensor.bedroom_monitor_carbon_dioxide
+    hours_to_show: 24
+    detail: 1
+    graph: line
+    name: Carbon Dioxide
+    icon: none
+    card_mod:
+      class: graph
+  - type: sensor
+    entity: sensor.bedroom_monitor_pm2_5
+    hours_to_show: 24
+    detail: 1
+    graph: line
+    name: Dust/Particulate
+    icon: none
+    card_mod:
+      class: graph
+  - type: sensor
+    entity: sensor.bedroom_monitor_volatile_organic_compounds
+    hours_to_show: 24
+    detail: 1
+    graph: line
+    name: Volatile Organic Compounds
+    icon: none
+    card_mod:
+      class: graph
