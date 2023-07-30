@@ -8,7 +8,7 @@ I've made various tweaks to the styling to suit my preferences, and re-designed 
 ## Cards & Elements
 
 ### Page view button card:
-The page view buttons allow switching between dashboard views, they can be resized and aligned in any way you choose. I typically leave them at the very top of the dashboard when I use them.
+Allows switching between dashboard views, they can be resized and aligned as required. I typically leave them at the very top of the dashboard when I use them.
 
 [YAML Code](/page-view-buttons.yaml)
 
@@ -26,7 +26,7 @@ The header is the centerpiece of each dashboard view. The name, as well as the c
 ---
 
 ### Air quality swiper card:
-The air quality swiper card contains multiple sensor cards showing info like humidity, CO2 and dust levels from an air quality sensor. The first card is a custom card showing an air quality score, this can be used with something like an Awair AQ sensor or Amazon AQM sensor. In the example, I have my awair air quality score showcased here.
+A swipable multi-card view with multiple sensor cards showing info like humidity, CO2 and dust levels from an air quality sensor. The first card in the swipe view is a custom card showing air quality score, this can be used with something like an Awair or Amazon AQM sensor. In the example, I have my awair air quality score showcased here.
 
 [YAML Code](/air-quality-swiper.yaml)
 
@@ -35,7 +35,7 @@ The air quality swiper card contains multiple sensor cards showing info like hum
 ---
 
 ### Light slider cards:
-The light slider cards come in two forms, for a standard yellow/white light and for a full colour light. The slider controls brightness, and press-and-hold action on the card brings up the more-info panel for the light entity.
+Two styles, for a standard yellow/white light and for a full colour light. The slider controls brightness, and press-and-hold action on the card brings up the more-info panel for the light entity.
 
 You can use 'aspect_ratio: 1/1' to make the card square. Eg.
 ```
@@ -67,7 +67,7 @@ In my card layout, light sliders are always placed next to scene button cards in
 ---
 
 ### Light scene button cards:
-The light scene buttons are simple custom button cards with tap_actions defined to activate a light scene. I use philips hue, so they call the 'hue.activate_scene' service.
+Simple custom button cards with tap_actions defined to activate a light scene. I use philips hue, so they call the 'hue.activate_scene' service.
 
 [YAML Code](/lighting-scene-button.yaml)
 
@@ -76,7 +76,7 @@ The light scene buttons are simple custom button cards with tap_actions defined 
 ---
 
 ### 'More information' button card:
-This card is a simple button that can be used to show more-info about an entity or to link to a subview. I mostly use these buttons as navigation to a subview containing a full list of entities. 
+Can be used to show more-info about an entity or to link to a subview. I mostly use these buttons as navigation to a subview containing a full list of entities. 
 
 The below example is configured to go to a hidden subview of the dashboard containing all my smart-lights.
 
@@ -87,3 +87,5 @@ The below example is configured to go to a hidden subview of the dashboard conta
 ![image info](images/more-information-button-example.gif)
 
 ---
+
+### Switch button cards:
