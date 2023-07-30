@@ -7,14 +7,17 @@ I've made various tweaks to the styling to suit my preferences, and re-designed 
 
 ### Page view buttons
 The page view buttons allow switching between dashboard views, they can be resized and aligned in any way you choose. I typically leave them at the very top of the dashboard when I use them.
+
 ![image info](images/page-view-buttons.png)
 
 ### Dashboard header
 The header is the centerpiece of each dashboard view. The name, as well as the contents of the pill below can be customized.
+
 ![image info](images/dashboard-header.png)
 
 ### Air quality swiper card
 The air quality swiper card contains multiple sensor cards showing info like humidity, CO2 and dust levels from an air quality sensor. The first card is a custom card showing an air quality score, this can be used with something like an Awair AQ sensor or Amazon AQM sensor. In the example, I have my awair air quality score showcased here.
+
 ![image info](images/air-quality-swiper.gif)
 
 ## Getting started
