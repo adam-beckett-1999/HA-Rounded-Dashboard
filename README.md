@@ -1,6 +1,6 @@
 # HA Dashboard
 
-
+![image info](images/page-view-buttons.png)
 
 ## Getting started
 
