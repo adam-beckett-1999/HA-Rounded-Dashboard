@@ -19,6 +19,12 @@ The font used is HK-nova, which needs to be manually installed in /www/fonts/ di
 
 To use the font, copy the CSS file here: [fontstyle.css](/fontstyle.css) to the /www/ directory and in HA, enable advanced mode in your profile and use the edit menu in your dashboard to add the CSS file as resource.
 
+And you will need to include the following in your configuration.yaml:
+```
+frontend:
+  themes: !include_dir_merge_named themes/
+```
+
 ---
 
 #### Details:
