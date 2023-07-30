@@ -141,6 +141,8 @@ When used with Logitech Harmony, these buttons allow switching between activites
 
 Again, these cards come in 2 different styles. For the power-off card, when everything is powered off, the button will be red. And for the activity cards, the state value changes the card to green to show its active. Examples below:
 
+![image info](images/media-activity-button-grid.gif)
+
 [YAML Code](/media-activity-off-button.yaml)
 
 ![image info](images/media-activity-off-button.gif)
@@ -148,7 +150,5 @@ Again, these cards come in 2 different styles. For the power-off card, when ever
 [YAML Code](/media-activity-button.yaml)
 
 ![image info](images/media-activity-button.gif)
-
-![image info](images/media-activity-button-grid.png)
 
 ---
