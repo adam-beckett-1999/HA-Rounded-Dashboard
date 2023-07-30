@@ -43,7 +43,7 @@ frontend:
 ### Page view button card:
 Allows switching between dashboard views, they can be resized and aligned as required. I typically place them at the very top of the dashboard when I use them.
 
-[YAML Code](/page-view-buttons.yaml)
+[YAML Code](/cards/page-view-buttons.yaml)
 
 ![image info](images/page-view-buttons.png)
 
@@ -52,7 +52,7 @@ Allows switching between dashboard views, they can be resized and aligned as req
 ### Dashboard header card:
 The header is the centerpiece of each dashboard view. The name, as well as the contents of the pill below can be customized.
 
-[YAML Code](/dashboard-header.yaml)
+[YAML Code](/cards/dashboard-header.yaml)
 
 ![image info](images/dashboard-header.png)
 
@@ -61,7 +61,7 @@ The header is the centerpiece of each dashboard view. The name, as well as the c
 ### Air quality swiper card:
 A swipable multi-card view with multiple sensor cards showing info like humidity, CO2 and dust levels from an air quality sensor. The first card in the swipe view is a custom card showing air quality score, this can be used with something like an Awair or Amazon AQM sensor. In the example, I have my awair air quality score showcased here.
 
-[YAML Code](/air-quality-swiper.yaml)
+[YAML Code](/cards/air-quality-swiper.yaml)
 
 ![image info](images/air-quality-swiper.gif)
 
@@ -82,18 +82,18 @@ tap_action:
   ...
 ```
 
-[YAML Code](/light-card-normal.yaml)
+[YAML Code](/cards/light-card-normal.yaml)
 
 ![image info](images/light-card-normal.gif)
 
 
-[YAML Code](/light-card-colour.yaml)
+[YAML Code](/cards/light-card-colour.yaml)
 
 ![image info](images/light-card-colour.gif)
 
 In my card layout, light sliders are always placed next to scene button cards in a grid card. Below is an example of the lighting grid for one room.
 
-[YAML Code](/full-light-grid-card.yaml)
+[YAML Code](/cards/full-light-grid-card.yaml)
 
 ![image info](images/full-light-grid-card.png)
 
@@ -102,7 +102,7 @@ In my card layout, light sliders are always placed next to scene button cards in
 ### Light scene button cards:
 Simple custom button cards with tap_actions defined to activate a light scene. I use philips hue, so they call the 'hue.activate_scene' service.
 
-[YAML Code](/lighting-scene-button.yaml)
+[YAML Code](/cards/lighting-scene-button.yaml)
 
 ![image info](images/lighting-scene-button.png)
 
@@ -113,7 +113,7 @@ Can be used to show more-info about an entity or to link to a subview. I mostly 
 
 The below example is configured to go to a hidden subview of the dashboard containing all my smart-lights.
 
-[YAML Code](/more-information-button.yaml)
+[YAML Code](/cards/more-information-button.yaml)
 
 ![image info](images/more-information-button.png)
 
@@ -126,11 +126,11 @@ Simple customizable toggle buttons for controlling switch entities or entities w
 
 These cards also come in 2 different styles with only a minor difference. The smart plugs connected to lamps or light-devices will be yellow when in the 'on' state, and the plugs connected to standard appliances will be green when in the 'on' state.
 
-[YAML Code](/switch-button-light.yaml)
+[YAML Code](/cards/switch-button-light.yaml)
 
 ![image info](images/switch-button-light.gif)
 
-[YAML Code](/switch-button-device.yaml)
+[YAML Code](/cards/switch-button-device.yaml)
 
 ![image info](images/switch-button-device.gif)
 
@@ -143,11 +143,11 @@ Again, these cards come in 2 different styles. For the power-off card, when ever
 
 ![image info](images/media-activity-button-grid.gif)
 
-[YAML Code](/media-activity-off-button.yaml)
+[YAML Code](/cards/media-activity-off-button.yaml)
 
 ![image info](images/media-activity-off-button.gif)
 
-[YAML Code](/media-activity-button.yaml)
+[YAML Code](/cards/media-activity-button.yaml)
 
 ![image info](images/media-activity-button.gif)
 

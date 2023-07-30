@@ -1,0 +1,140 @@
+square: true
+type: grid
+cards:
+  - type: custom:button-card
+    icon: mdi:television-off
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.turn_off_tv
+      haptic: medium
+      service_data:
+        activity: TV Off
+    entity: select.bedroom_harmony_hub_activities
+    show_name: false
+    state:
+      - value: power_off
+        styles:
+          card:
+            - background-color: var(--red)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #e3817a '
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--black)
+      img_cell:
+        - border-radius: 100%
+        - width: 75px
+        - height: 75px
+        - top: 0
+        - background-color: ' #dfe2e8 '
+  - type: custom:button-card
+    icon: mdi:television
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.turn_on_live_tv
+      haptic: medium
+      service_data:
+        activity: Live TV
+    entity: select.bedroom_harmony_hub_activities
+    show_name: false
+    state:
+      - value: Live TV
+        styles:
+          card:
+            - background-color: var(--green)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #accc7d '
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--black)
+      img_cell:
+        - border-radius: 100%
+        - width: 75px
+        - height: 75px
+        - top: 0
+        - background-color: ' #dfe2e8 '
+  - type: custom:button-card
+    icon: mdi:television-guide
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.turn_on_nvidia_shield_2
+      haptic: medium
+      service_data:
+        activity: NVIDIA SHIELD
+    entity: select.bedroom_harmony_hub_activities
+    show_name: false
+    state:
+      - value: NVIDIA Shield TV
+        styles:
+          card:
+            - background-color: var(--green)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #accc7d '
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--black)
+      img_cell:
+        - border-radius: 100%
+        - width: 75px
+        - height: 75px
+        - top: 0
+        - background-color: ' #dfe2e8 '
+  - type: custom:button-card
+    icon: mdi:nintendo-switch
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.turn_on_nintendo_switch
+      haptic: medium
+      service_data:
+        activity: Nintendo Switch
+    entity: select.bedroom_harmony_hub_activities
+    show_name: false
+    state:
+      - value: Nintendo Switch
+        styles:
+          card:
+            - background-color: var(--green)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #accc7d '
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--black)
+      img_cell:
+        - border-radius: 100%
+        - width: 75px
+        - height: 75px
+        - top: 0
+        - background-color: ' #dfe2e8 '
+columns: 4
