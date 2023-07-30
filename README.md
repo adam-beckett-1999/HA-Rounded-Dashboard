@@ -54,7 +54,9 @@ tap_action:
 
 In my card layout, light sliders are always placed next to scene button cards in a grid card. Below is an example of the lighting grid for one room.
 
-![image info](images/light-overview.png)
+[YAML Code](/full-light-grid-card.yaml)
+
+![image info](images/full-light-grid-card.png)
 
 ### Light scene button cards
 The light scene buttons are simple custom button cards with tap_actions defined to activate a light scene. I use philips hue, so they call the 'hue.activate_scene' service.
