@@ -134,6 +134,11 @@ Rounded:
   green-tint: rgba(var(--green-rgb),var(--color-tint))
   blue-tint: rgba(var(--blue-rgb),var(--color-tint))
   light-gray-tint: rgba(var(--light-gray-rgb),var(--color-tint))
+  # Alt colors
+  yellow-alt: rgb(var(--yellow-alt-rgb))
+  red-alt: rgb(var(--red-alt-rgb))
+  green-alt: rgb(var(--green-alt-rgb))
+  light-gray-alt: rgb(var(--light-gray-alt-rgb))
   # Gradients
   brightness: linear-gradient(90deg, rgba(var(--brightness-low-rgb), 0.4) 0%, rgba(var(--brightness-high-rgb), 1) 100%)
   brightness-tint: linear-gradient(90deg, rgba(var(--brightness-low-rgb), 0.06) 0%, rgba(var(--brightness-high-rgb), var(--color-tint)) 100%)
@@ -147,6 +152,11 @@ Rounded:
   green-rgb: 206, 245, 149
   blue-rgb: 144, 191, 255
   light-gray-rgb: 244, 246, 251
+  # Alt color RGB variables
+  yellow-alt-rgb: 239, 230, 162
+  red-alt-rgb: 227, 129, 122
+  green-alt-rgb: 172, 204, 125 
+  light-gray-alt-rgb: 223, 226, 232 
   # Gradient RGB variables
   brightness-low-rgb: 232, 176, 29
   brightness-high-rgb: 255, 211, 94
