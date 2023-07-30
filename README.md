@@ -52,7 +52,7 @@ tap_action:
 
 ![image info](images/light-card-colour.gif)
 
-In my card layout, light sliders are always placed next to scene button cards in a grid card.
+In my card layout, light sliders are always placed next to scene button cards in a grid card. Below is an example of the lighting grid for one room.
 
 ![image info](images/light-overview.png)
 

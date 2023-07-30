@@ -1,0 +1,316 @@
+square: false
+type: grid
+cards:
+  - type: custom:button-card
+    name: Ambient Lights
+    aspect_ratio: 1/1
+    icon: hue:desk-lamp
+    entity: light.bedroom_ambient_lights
+    tap_action:
+      action: toggle
+      haptic: medium
+    hold_action:
+      action: more-info
+      haptic: medium
+    custom_fields:
+      slider:
+        card:
+          type: custom:my-slider-v2
+          entity: '[[[ return entity.entity_id ]]]'
+          colorMode: brightness
+          styles:
+            container:
+              - background: none
+              - border-radius: 100px
+              - overflow: visible
+            card:
+              - height: 16px
+              - padding: 0 8px
+              - background: |
+                  [[[
+                    if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                    else return "var(--contrast4)";
+                  ]]]
+            track:
+              - overflow: visible
+              - background: none
+            progress:
+              - background: none
+            thumb:
+              - background: |
+                  [[[
+                    if (entity.state == "on") return "var(--black)";
+                    if (entity.state == "off") return "var(--contrast20)";
+                    else return "var(--contrast8)";
+                  ]]]
+              - top: 2px
+              - right: '-8px'
+              - height: 12px
+              - width: 12px
+              - border-radius: 10px
+    styles:
+      grid:
+        - grid-template-areas: '"i" "n" "slider"'
+        - grid-template-columns: 1fr
+        - grid-template-rows: 1fr min-content min-content
+      card:
+        - background: var(--contrast2)
+        - padding: 16px
+        - '--mdc-ripple-press-opacity': 0
+      img_cell:
+        - justify-self: start
+        - width: 24px
+        - top: 55px
+      icon:
+        - width: 24px
+        - height: 24px
+        - color: var(--contrast8)
+      name:
+        - justify-self: start
+        - font-size: 14px
+        - margin: 4px 0 12px 0
+        - color: var(--contrast8)
+    state:
+      - value: 'on'
+        styles:
+          card:
+            - background: |
+                [[[
+                    var color = entity.attributes?.rgb_color;
+                    if (entity.state != "on"){
+                      return 'var(--contrast20)';
+                    }
+                    else if (color){
+                      return 'rgba(' + color + ')'
+                    }
+                    else{
+                      return 'var(--yellow)'
+                    }
+                ]]]
+          icon:
+            - color: var(--black)
+          name:
+            - color: var(--black)
+      - value: 'off'
+        styles:
+          icon:
+            - color: var(--contrast20)
+          name:
+            - color: var(--contrast20)
+  - square: true
+    columns: 2
+    type: grid
+    cards:
+      - type: custom:button-card
+        icon: mdi:lightbulb-on-50
+        aspect_ratio: 1/1
+        tap_action:
+          action: call-service
+          service: hue.activate_scene
+          haptic: medium
+          service_data:
+            entity_id: scene.bedroom_ambient_lights_nightlight
+        styles:
+          card:
+            - border-radius: 24px
+            - background-color: var(--yellow)
+          icon:
+            - color: var(--black)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #efe6a2 '
+      - type: custom:button-card
+        icon: mdi:lightbulb-on
+        aspect_ratio: 1/1
+        tap_action:
+          action: call-service
+          service: hue.activate_scene
+          haptic: medium
+          service_data:
+            entity_id: scene.bedroom_ambient_lights_energize
+        styles:
+          card:
+            - border-radius: 24px
+            - background-color: var(--yellow)
+          icon:
+            - color: var(--black)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #efe6a2 '
+      - type: custom:button-card
+        icon: mdi:aurora
+        aspect_ratio: 1/1
+        tap_action:
+          action: call-service
+          service: hue.activate_scene
+          haptic: medium
+          service_data:
+            entity_id: scene.bedroom_ambient_lights_arctic_aurora
+        styles:
+          card:
+            - border-radius: 24px
+            - background-color: var(--yellow)
+          icon:
+            - color: var(--black)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #efe6a2 '
+      - type: custom:button-card
+        icon: mdi:wave
+        aspect_ratio: 1/1
+        tap_action:
+          action: call-service
+          service: hue.activate_scene
+          haptic: medium
+          service_data:
+            entity_id: scene.bedroom_ambient_lights_ocean_dawn
+        styles:
+          card:
+            - border-radius: 24px
+            - background-color: var(--yellow)
+          icon:
+            - color: var(--black)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #efe6a2 '
+  - type: custom:button-card
+    name: Ceiling Light
+    icon: hue:pendant-round
+    entity: light.bedroom
+    tap_action:
+      action: toggle
+      haptic: medium
+    hold_action:
+      action: more-info
+      haptic: medium
+    custom_fields:
+      slider:
+        card:
+          type: custom:my-slider-v2
+          entity: light.bedroom
+          colorMode: brightness
+          styles:
+            container:
+              - background: none
+              - border-radius: 100px
+              - overflow: visible
+            card:
+              - height: 16px
+              - padding: 0 8px
+              - background: |
+                  [[[
+                    if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                    else return "var(--contrast4)";
+                  ]]]
+            track:
+              - overflow: visible
+              - background: none
+            progress:
+              - background: none
+            thumb:
+              - background: |
+                  [[[
+                    if (entity.state == "on") return "var(--black)";
+                    if (entity.state == "off") return "var(--contrast20)";
+                    else return "var(--contrast8)";
+                  ]]]
+              - top: 2px
+              - right: '-6px'
+              - height: 12px
+              - width: 12px
+              - border-radius: 100px
+    styles:
+      grid:
+        - grid-template-areas: '"i" "n" "slider"'
+        - grid-template-columns: 1fr
+        - grid-template-rows: 1fr min-content min-content
+      card:
+        - background: var(--contrast2)
+        - padding: 16px
+        - '--mdc-ripple-press-opacity': 0
+      img_cell:
+        - justify-self: start
+        - width: 24px
+      icon:
+        - width: 24px
+        - height: 24px
+        - color: var(--contrast8)
+      name:
+        - justify-self: start
+        - font-size: 14px
+        - margin: 4px 0 12px 0
+        - color: var(--contrast8)
+    state:
+      - value: 'on'
+        styles:
+          card:
+            - background: var(--yellow)
+          icon:
+            - color: var(--black)
+          name:
+            - color: var(--black)
+      - value: 'off'
+        styles:
+          icon:
+            - color: var(--contrast20)
+          name:
+            - color: var(--contrast20)
+  - square: true
+    columns: 2
+    type: grid
+    cards:
+      - type: custom:button-card
+        icon: mdi:lightbulb-on-50
+        aspect_ratio: 1/1
+        tap_action:
+          action: call-service
+          service: hue.activate_scene
+          haptic: medium
+          service_data:
+            entity_id: scene.bedroom_dimmed
+        styles:
+          card:
+            - border-radius: 24px
+            - background-color: var(--yellow)
+          icon:
+            - color: var(--black)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #efe6a2 '
+      - type: custom:button-card
+        icon: mdi:lightbulb-on
+        aspect_ratio: 1/1
+        tap_action:
+          action: call-service
+          service: hue.activate_scene
+          haptic: medium
+          service_data:
+            entity_id: scene.bedroom_energize
+        styles:
+          card:
+            - border-radius: 24px
+            - background-color: var(--yellow)
+          icon:
+            - color: var(--black)
+          img_cell:
+            - border-radius: 100%
+            - width: 75px
+            - height: 75px
+            - top: 0
+            - background-color: ' #efe6a2 '
+columns: 2
