@@ -31,6 +31,11 @@ The air quality swiper card contains multiple sensor cards showing info like hum
 ### Light slider cards
 The light cards come in two forms, for a standard yellow/white light and for a full colour light.
 
+Using the below code will make the card square.
+```
+aspect_ratio: 1/1
+```
+
 [YAML Code](/light-card-normal.yaml)
 
 ![image info](images/light-card-normal.gif)
