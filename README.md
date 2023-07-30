@@ -7,14 +7,14 @@ I've made various tweaks to the styling to suit my preferences, and re-designed 
 
 ## Theme Elements
 
-### Page view buttons
+### Page view button card 
 The page view buttons allow switching between dashboard views, they can be resized and aligned in any way you choose. I typically leave them at the very top of the dashboard when I use them.
 
 [YAML Code](/page-view-buttons.yaml)
 
 ![image info](images/page-view-buttons.png)
 
-### Dashboard header
+### Dashboard header card
 The header is the centerpiece of each dashboard view. The name, as well as the contents of the pill below can be customized.
 
 [YAML Code](/dashboard-header.yaml)
@@ -29,7 +29,7 @@ The air quality swiper card contains multiple sensor cards showing info like hum
 ![image info](images/air-quality-swiper.gif)
 
 ### Light slider cards
-The light cards come in two forms, for a standard yellow/white light and for a full colour light. The slider controls brightness, and press-and-hold action on the card brings up the more-info panel for the light entity.
+The light slider cards come in two forms, for a standard yellow/white light and for a full colour light. The slider controls brightness, and press-and-hold action on the card brings up the more-info panel for the light entity.
 
 You can use 'aspect_ratio: 1/1' to make the card square. Eg.
 ```
@@ -51,3 +51,14 @@ tap_action:
 [YAML Code](/light-card-colour.yaml)
 
 ![image info](images/light-card-colour.gif)
+
+In my card layout, light sliders are always placed next to scene button cards in a grid card.
+
+![image info](images/light-overview.png)
+
+### Light scene button cards
+The light scene buttons are simple custom button cards with tap_actions defined to activate a light scene. I use philips hue, so they call the 'hue.activate_scene' service.
+
+[YAML Code](/lighting-scene-button.yaml)
+
+![image info](images/lighting-scene-button.png)
