@@ -28,6 +28,7 @@ I've made various tweaks to the styling to suit my preferences, and re-designed 
 ![image info](images/dashboard-overview.gif)
 
 ---
+---
 
 ## Cards & Elements
 
