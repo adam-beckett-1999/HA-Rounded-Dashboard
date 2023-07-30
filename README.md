@@ -13,11 +13,11 @@ You will need to add the HACS plugin and install some custom cards in order for 
 * Swipe card
 * Layout card
 
-My custom theme file: [YAML Code](/themes/Rounded.yaml)
+My custom theme file: [Rounded.yaml](/themes/Rounded.yaml)
 
 The font used is HK-nova, which needs to be manually installed in /www/fonts/ directory: [Font](https://hanken.co/en-gb/products/hk-nova)
 
-To use the font, copy the CSS file here: [fontstyle.css](https://hanken.co/en-gb/products/hk-nova) to the /www/ directory and in HA, enable advanced mode in your profile and use the edit menu in your dashboard to add the CSS file as resource.
+To use the font, copy the CSS file here: [fontstyle.css](/fontstyle.css) to the /www/ directory and in HA, enable advanced mode in your profile and use the edit menu in your dashboard to add the CSS file as resource.
 
 ---
 
