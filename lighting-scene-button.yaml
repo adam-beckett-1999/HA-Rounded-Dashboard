@@ -1,0 +1,21 @@
+type: custom:button-card
+icon: ### icon
+aspect_ratio: 1/1
+tap_action:
+  action: call-service
+  service: hue.activate_scene ### this activates a philips hue scene, change this according to your needs
+  haptic: medium
+  service_data:
+    entity_id: ### entity here
+styles:
+  card:
+    - border-radius: 24px
+    - background-color: var(--yellow)
+  icon:
+    - color: var(--black)
+  img_cell:
+    - border-radius: 100%
+    - width: 75px
+    - height: 75px
+    - top: 0
+    - background-color: ' #efe6a2 '

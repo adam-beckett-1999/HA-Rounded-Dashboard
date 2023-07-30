@@ -39,7 +39,7 @@ cards:
           - color: var(--contrast9)
           - margin-bottom: 6px
           - padding-left: 2px
-    label: Awair Score
+    label: Awair Score ### label here
     custom_fields:
       max-score: '&nbsp;/100'
     show_label: true
@@ -47,11 +47,11 @@ cards:
       action: more-info
       haptic: medium
   - type: sensor
-    entity: sensor.bedroom_monitor_humidity
+    entity: sensor.bedroom_monitor_humidity ### entity here
     hours_to_show: 24
     detail: 1
     graph: line
-    name: Humidity
+    name: Humidity ### this changes the text in the pill
     icon: none
     card_mod:
       class: graph

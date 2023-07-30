@@ -1,8 +1,8 @@
 type: custom:button-card
-name: Ambient Lights ### light name
+name: ### light name
 aspect_ratio: 1/1 ### use this to make the card square
 icon: hue:desk-lamp
-entity: light.adams_bedroom_ambient_lights ### entity here
+entity: ### entity here
 tap_action:
   action: toggle
   haptic: medium

@@ -9,7 +9,7 @@ custom_fields:
         states['sensor.bedroom_monitor_temperature'].state + ' °C' ]]] 
       show_label: true
       show_icon: false
-      entity: sensor.bedroom_monitor_temperature
+      entity: sensor.bedroom_monitor_temperature ### entity here
       tap_action:
         action: more-info
         haptic: medium

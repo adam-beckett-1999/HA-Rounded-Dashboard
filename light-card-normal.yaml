@@ -1,7 +1,7 @@
 type: custom:button-card
-name: Ceiling Light ### light name
-icon: hue:pendant-round
-entity: light.adams_bedroom ### entity here
+name: ### light name
+icon: ### icon
+entity: ### entity here
 tap_action:
   action: toggle
   haptic: medium
@@ -12,7 +12,7 @@ custom_fields:
   slider:
     card:
       type: custom:my-slider-v2
-      entity: light.adams_bedroom ### and here
+      entity: ### and here
       colorMode: brightness
       styles:
         container:
