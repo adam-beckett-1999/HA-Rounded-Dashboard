@@ -1,6 +1,9 @@
 # HA Dashboard
-This is my adaptation of the Rounded Dashboard created by LE0N on the Home Assistant forums. The original theme & styling can be found here: https://community.home-assistant.io/t/rounded-dashboard-guide/543043
+This is my adaptation of the Rounded Dashboard created by LE0N on the Home Assistant forums. The original theme & styling can be found here: https://community.home-assistant.io/t/rounded-dashboard-guide/543043.
+
 I've made various tweaks to the styling to suit my preferences, and re-designed some of the cards and created my own in a way that matches the original theme.
+
+## Theme Elements
 
 ![image info](images/page-view-buttons.png)
 
