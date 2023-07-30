@@ -29,7 +29,7 @@ frontend:
 
 #### Details:
 
-I've made various tweaks to the styling to suit my preferences, and re-designed some of the cards and created my own in a way that matches the original theme.
+I've made various tweaks to the styling to suit my preferences, and re-designed some of the cards and created my own in a way that matches the original theme. All of my dashboards make use of the layout card addon through HACS to control card placement and configure the dashboard views to a vertical layout where cards only occupy one column, so this is best suited to portrait view. Some cards may need the placement and padding of elements moved around and adjusted depending on screen size as they are not dynamic.
 
 ![image info](images/dashboard-overview.gif)
 
