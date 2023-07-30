@@ -1,5 +1,11 @@
 # HA Dashboard
-This is my adaptation of the Rounded Dashboard created by LE0N on the Home Assistant forums. The original theme & styling can be found here: https://community.home-assistant.io/t/rounded-dashboard-guide/543043. You will need to add the HACS plugin and install some custom cards in order for this to work.
+This is my adaptation of the Rounded Dashboard created by LE0N on the Home Assistant forums. The original theme & styling can be found here: https://community.home-assistant.io/t/rounded-dashboard-guide/543043. 
+
+---
+
+#### Requirements:
+
+You will need to add the HACS plugin and install some custom cards in order for this to work.
 
 * Card-mod
 * Button-card
@@ -7,15 +13,21 @@ This is my adaptation of the Rounded Dashboard created by LE0N on the Home Assis
 * Swipe card
 * Layout card
 
-My theme file: [YAML Code](/themes/Rounded.yaml)
+My custom theme file: [YAML Code](/themes/Rounded.yaml)
 
 The font used is HK-nova, which needs to be manually installed in /www/fonts/ directory: [Font](https://hanken.co/en-gb/products/hk-nova)
 
 To use the font, copy the CSS file here: [fontstyle.css](https://hanken.co/en-gb/products/hk-nova) to the /www/ directory and in HA, enable advanced mode in your profile and use the edit menu in your dashboard to add the CSS file as resource.
 
+---
+
+#### Details:
+
 I've made various tweaks to the styling to suit my preferences, and re-designed some of the cards and created my own in a way that matches the original theme.
 
 ![image info](images/dashboard-overview.gif)
+
+---
 
 ## Cards & Elements
 
