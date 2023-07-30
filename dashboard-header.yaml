@@ -1,0 +1,44 @@
+type: custom:button-card
+name: ###room name
+custom_fields:
+  badge:
+    card:
+      type: custom:button-card
+      name: >- ### edit this vvv to change the contents of the pill below the room name
+        [[[ return 'Temperature: ' +
+        states['sensor.bedroom_monitor_temperature'].state + ' °C' ]]] 
+      show_label: true
+      show_icon: false
+      entity: sensor.bedroom_monitor_temperature
+      tap_action:
+        action: more-info
+        haptic: medium
+      styles:
+        grid:
+          - grid-template-areas: '"n gutter l"'
+          - grid-template-columns: min-content 5px min-content
+          - grid-template-rows: min-content
+        card:
+          - padding: 6px 10px
+          - font-size: 12px
+          - line-height: 18px
+          - font-weight: 500
+          - background: var(--contrast20)
+        name:
+          - color: var(--contrast1)
+        label:
+          - color: var(--contrast12)
+styles:
+  grid:
+    - grid-template-areas: '"n" "badge"'
+  card:
+    - background: none
+    - padding: 16px 0
+    - '--mdc-ripple-press-opacity': 0
+  name:
+    - font-size: 48px
+    - color: var(--contrast20)
+  custom_fields:
+    badge:
+      - margin: 16px auto 0 auto
+      - '--mdc-ripple-press-opacity': 0.5

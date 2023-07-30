@@ -6,7 +6,7 @@ cards:
     aspect_ratio: 1/1
     tap_action:
       action: navigate
-      navigation_path: /lovelace/home
+      navigation_path: /lovelace/ ###dashboard view
     show_name: false
     styles:
       card:
@@ -27,7 +27,7 @@ cards:
     aspect_ratio: 1/1
     tap_action:
       action: navigate
-      navigation_path: /lovelace/kitchen
+      navigation_path: /lovelace/ ###dashboard view
     show_name: false
     styles:
       card:
