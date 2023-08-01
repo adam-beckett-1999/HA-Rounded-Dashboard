@@ -1,0 +1,60 @@
+type: horizontal-stack
+cards:
+  - type: custom:button-card
+    entity: sensor.hp_envy_4520_series
+    name: |
+      [[[return entity.state.charAt(0).toUpperCase() + entity.state.slice(1);]]]
+    styles:
+      grid:
+        - grid-template-areas: '"n max-score" "l l"'
+        - grid-template-columns: min-content min-content
+      name:
+        - font-size: 30px
+        - position: absolute
+        - color: var(--contrast20)
+        - margin-top: 50px
+        - margin-left: '-74px'
+      card:
+        - border-radius: 24px
+        - padding: 35px 0 6px 16px
+        - box-sizing: border-box
+        - background: var(--light-gray)
+        - box-shadow: none
+        - width: 142px
+        - height: 142px
+      label:
+        - justify-self: start
+        - font-size: 16px
+        - color: var(--contrast10)
+        - margin-top: '-220px'
+    label: Printer
+    show_label: true
+    tap_action:
+      action: none
+      haptic: medium
+  - type: custom:bar-card
+    height: 50px
+    max: 100
+    min: 0
+    padding: 2px
+    title_position: bottom
+    icon_position: inside
+    width: 75%
+    direction: right
+    columns: 1
+    entities:
+      - color: black
+        entity: sensor.hp_envy_4520_series_black_ink
+        name: Black
+        positions:
+          icon: inside
+          indicator: inside
+          name: 'off'
+      - color: var(--blue)
+        entity: sensor.hp_envy_4520_series_tri_color_ink
+        name: Tri-Colour
+        positions:
+          icon: inside
+          indicator: inside
+          name: 'off'
+    unit_of_measurement: '%'

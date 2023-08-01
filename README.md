@@ -20,6 +20,7 @@ You will need to add the HACS plugin and install some custom cards in order for 
 * My-slider-v2 (My Cards Bundle)
 * Swipe card
 * Layout card
+* Bar card
 
 My custom theme file: [Rounded.yaml](/themes/Rounded.yaml)
 
@@ -171,3 +172,10 @@ In the example below, each running app has its own card colour scheme and pictur
 ![image info](images/media-source-card.gif)
 
 ---
+
+### Printer info card:
+Shows the current status of the printer in a custom button card, alongside a bar-card displaying current ink levels.
+
+[YAML Code](/cards/printer-info-card.yaml)
+
+![image info](images/printer-info-card.gif)
