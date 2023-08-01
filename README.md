@@ -168,6 +168,6 @@ In the example below, each running app has its own card colour scheme and pictur
 
 [YAML Code](/cards/media-source-card.yaml)
 
-
+![image info](images/media-source-card.gif)
 
 ---
