@@ -152,3 +152,10 @@ Again, these cards come in 2 different styles. For the power-off card, when ever
 ![image info](images/media-activity-button.gif)
 
 ---
+
+### Media source card:
+Displays the active media source from a connected smart TV or Android TV/Fire TV. For my card, I use the Android Debug Bridge to give me the app_name attribute which is used to change the display on the card. Each app can have a customised look, with a fallback to a neutral 'off' state when the TV is powered off.
+
+[YAML Code](/cards/media-source-card.yaml)
+
+![image info](images/media-source-card.gif)

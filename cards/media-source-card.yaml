@@ -1,0 +1,75 @@
+type: custom:button-card
+entity: media_player.bedroom_nvidia_shield
+name: >
+  [[[
+    if (entity.attributes.app_name == "Twitch") return entity.attributes.app_name;
+    if (entity.attributes.app_name == "YouTube") return entity.attributes.app_name;
+    if (entity.attributes.app_name == "Plex") return entity.attributes.app_name;
+    if (entity.attributes.app_name == "Android TV Launcher") return entity.attributes.app_name;
+    else return entity.state.charAt(0).toUpperCase() + entity.state.slice(1);
+  ]]]
+label: NVIDIA Shield TV
+show_entity_picture: true
+show_label: true
+entity_picture: >
+  [[[ 
+    if (entity.attributes.app_name == "Twitch") return "/local/twitch.png";
+    if (entity.attributes.app_name == "YouTube") return "/local/youtube.png";
+    if (entity.attributes.app_name == "Plex") return "/local/plex.png";
+    if (entity.attributes.app_name == "Android TV Launcher") return "/local/launcher.png";
+    else return "/local/off.png";
+  ]]]
+styles:
+  grid:
+    - grid-template-areas: '"i gutter n"'
+    - grid-template-columns: min-content 24px 1fr
+  card:
+    - background: >
+        [[[ 
+          if (entity.attributes.app_name == "Twitch") return "rgba(169,112,255,var(--color-tint))";
+          if (entity.attributes.app_name == "YouTube") return "rgba(255,0,0,var(--color-tint))";
+          if (entity.attributes.app_name == "Plex") return "rgba(229,160,13,var(--color-tint))";
+          if (entity.attributes.app_name == "Android TV Launcher") return "rgba(13,123,229,var(--color-tint))";
+          else return "var(--contrast2)";
+        ]]]
+    - padding: 24px
+    - '--mdc-ripple-press-opacity': 0
+  icon:
+    - width: 70px
+    - height: 70px
+    - border-radius: 16px
+    - border: >
+        [[[
+          if (entity.attributes.app_name == "Twitch") return "5px solid rgba(169,112,255,0.5)";
+          if (entity.attributes.app_name == "YouTube") return "5px solid rgba(255,0,0,0.5)";
+          if (entity.attributes.app_name == "Plex") return "5px solid rgba(229,160,13,0.5)";
+          if (entity.attributes.app_name == "Android TV Launcher") return "5px solid rgba(13,123,229,0.5)";
+          else return "5px solid var(--contrast4)";
+        ]]]
+  entity_picture:
+    - padding: 10px
+  label:
+    - font-size: 12px
+    - color: >
+        [[[
+          if (entity.attributes.app_name == "Twitch") return "var(--purple-alt)";
+          if (entity.attributes.app_name == "YouTube") return "var(--red-alt)";
+          if (entity.attributes.app_name == "Plex") return "var(--orange-alt)";
+          if (entity.attributes.app_name == "Android TV Launcher") return "var(--blue-alt)";
+          else return "var(--contrast8)";
+        ]]]
+    - position: absolute
+    - top: 80px
+    - left: 140px
+  name:
+    - font-size: 16px
+    - color: var(--contrast20)
+    - position: absolute
+    - width: 100%
+    - top: 45px
+    - left: 140px
+    - text-align: left
+tap_action:
+  action: call-service
+  service: script.turn_on_nvidia_shield_2
+  haptic: medium
