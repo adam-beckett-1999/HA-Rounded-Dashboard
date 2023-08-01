@@ -1,0 +1,94 @@
+square: true
+type: grid
+columns: 5
+cards:
+  - type: custom:button-card
+    icon: mdi:play
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.play
+      haptic: medium
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--contrast12)
+      img_cell:
+        - border-radius: 100%
+        - width: 50px
+        - height: 50px
+        - background-color: var(--light-gray-alt)
+  - type: custom:button-card
+    icon: mdi:pause
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.pause
+      haptic: medium
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--contrast12)
+      img_cell:
+        - border-radius: 100%
+        - width: 50px
+        - height: 50px
+        - background-color: var(--light-gray-alt)
+  - type: custom:button-card
+    icon: mdi:volume-mute
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.mute_unmute_tv
+      haptic: medium
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--contrast12)
+      img_cell:
+        - border-radius: 100%
+        - width: 50px
+        - height: 50px
+        - background-color: var(--light-gray-alt)
+  - type: custom:button-card
+    icon: mdi:volume-minus
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.tv_volume_minus
+      haptic: medium
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--contrast12)
+      img_cell:
+        - border-radius: 100%
+        - width: 50px
+        - height: 50px
+        - background-color: var(--light-gray-alt)
+  - type: custom:button-card
+    icon: mdi:volume-plus
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: script.tv_volume_plus
+      haptic: medium
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: var(--light-gray)
+      icon:
+        - color: var(--contrast12)
+      img_cell:
+        - border-radius: 100%
+        - width: 50px
+        - height: 50px
+        - background-color: var(--light-gray-alt)

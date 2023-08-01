@@ -106,6 +106,14 @@ Simple custom button cards with tap_actions defined to activate a light scene. I
 
 ![image info](images/lighting-scene-button.png)
 
+
+### Media playback control button cards:
+Using the same button styling, we can also make some simple media playback control buttons for your smart TV or smart speaker. Either using service calls directly or through custom scripts, you can play/pause and control volume on your media center or speaker system. You can also add or remove buttons in the grid as you see fit if you would like more control options.
+
+[YAML Code](/cards/media-playback-control-button-card.yaml)
+
+![image info](images/media-playback-control-button-card.png)
+
 ---
 
 ### 'More information' button card:
@@ -161,3 +169,5 @@ In the example below, each running app has its own card colour scheme and pictur
 [YAML Code](/cards/media-source-card.yaml)
 
 ![image info](images/media-source-card.gif)
+
+---
