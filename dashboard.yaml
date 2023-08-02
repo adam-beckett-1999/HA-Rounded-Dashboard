@@ -6,7 +6,7 @@ swipe_nav:
 views:
   - title: Bedroom
     path: bedroom
-    icon: mdi:bed-queen
+    icon: ''
     theme: Rounded
     type: custom:vertical-layout
     badges: []
@@ -21,11 +21,10 @@ views:
                   type: custom:button-card
                   name: >-
                     [[[ return 'Temperature: ' +
-                    states['sensor.bedroom_monitor_temperature'].state + ' °C'
-                    ]]]
+                    states['sensor.bedroom_temperature'].state + ' °C' ]]]
                   show_label: true
                   show_icon: false
-                  entity: sensor.bedroom_monitor_temperature
+                  entity: sensor.bedroom_temperature
                   tap_action:
                     action: more-info
                     haptic: medium
@@ -72,9 +71,7 @@ views:
                 type: bullets
             cards:
               - type: custom:button-card
-                name: >-
-                  [[[return
-                  states["sensor.bedroom_monitor_awair_score"].state]]]
+                name: '[[[return states["sensor.bedroom_air_quality_score"].state]]]'
                 styles:
                   grid:
                     - grid-template-areas: '"n max-score" "l l"'
@@ -82,6 +79,9 @@ views:
                   name:
                     - font-size: 40px
                     - color: var(--contrast20)
+                    - position: absolute
+                    - top: 100px
+                    - left: 12px
                   card:
                     - border-radius: 24px
                     - padding: 35px 0 6px 16px
@@ -96,20 +96,21 @@ views:
                     - color: var(--contrast10)
                     - margin-top: '-75px'
                   custom_fields:
-                    eenheid:
-                      - font-size: 2px
+                    max-score:
+                      - font-size: 15px
                       - color: var(--contrast9)
-                      - margin-bottom: 6px
-                      - padding-left: 2px
-                label: Awair Score
+                      - position: absolute
+                      - top: 120px
+                      - left: 55px
+                label: Air Quality Score
                 custom_fields:
                   max-score: '&nbsp;/100'
                 show_label: true
                 tap_action:
-                  action: more-info
+                  action: none
                   haptic: medium
               - type: sensor
-                entity: sensor.bedroom_monitor_humidity
+                entity: sensor.bedroom_humidity
                 hours_to_show: 24
                 detail: 1
                 graph: line
@@ -118,7 +119,7 @@ views:
                 card_mod:
                   class: graph
               - type: sensor
-                entity: sensor.bedroom_monitor_carbon_dioxide
+                entity: sensor.bedroom_carbon_dioxide
                 hours_to_show: 24
                 detail: 1
                 graph: line
@@ -127,7 +128,7 @@ views:
                 card_mod:
                   class: graph
               - type: sensor
-                entity: sensor.bedroom_monitor_pm2_5
+                entity: sensor.bedroom_pm2_5
                 hours_to_show: 24
                 detail: 1
                 graph: line
@@ -136,7 +137,7 @@ views:
                 card_mod:
                   class: graph
               - type: sensor
-                entity: sensor.bedroom_monitor_volatile_organic_compounds
+                entity: sensor.bedroom_volatile_organic_compounds
                 hours_to_show: 24
                 detail: 1
                 graph: line
@@ -156,7 +157,7 @@ views:
                 name: Ambient Lights
                 aspect_ratio: 1/1
                 icon: hue:desk-lamp
-                entity: light.adams_bedroom_ambient_lights
+                entity: light.bedroom_ambient_lights
                 tap_action:
                   action: toggle
                   haptic: medium
@@ -260,7 +261,7 @@ views:
                       service: hue.activate_scene
                       haptic: medium
                       service_data:
-                        entity_id: scene.adams_bedroom_ambient_lights_nightlight
+                        entity_id: scene.bedroom_ambient_lights_nightlight
                     styles:
                       card:
                         - border-radius: 24px
@@ -281,7 +282,7 @@ views:
                       service: hue.activate_scene
                       haptic: medium
                       service_data:
-                        entity_id: scene.adams_bedroom_ambient_lights_energize
+                        entity_id: scene.bedroom_ambient_lights_energize
                     styles:
                       card:
                         - border-radius: 24px
@@ -302,7 +303,7 @@ views:
                       service: hue.activate_scene
                       haptic: medium
                       service_data:
-                        entity_id: scene.adams_bedroom_ambient_lights_arctic_aurora
+                        entity_id: scene.bedroom_ambient_lights_arctic_aurora
                     styles:
                       card:
                         - border-radius: 24px
@@ -323,7 +324,7 @@ views:
                       service: hue.activate_scene
                       haptic: medium
                       service_data:
-                        entity_id: scene.adams_bedroom_ambient_lights_ocean_dawn
+                        entity_id: scene.bedroom_ambient_lights_ocean_dawn
                     styles:
                       card:
                         - border-radius: 24px
@@ -339,7 +340,7 @@ views:
               - type: custom:button-card
                 name: Ceiling Light
                 icon: hue:pendant-round
-                entity: light.adams_bedroom
+                entity: light.bedroom
                 tap_action:
                   action: toggle
                   haptic: medium
@@ -350,7 +351,7 @@ views:
                   slider:
                     card:
                       type: custom:my-slider-v2
-                      entity: light.adams_bedroom
+                      entity: light.bedroom
                       colorMode: brightness
                       styles:
                         container:
@@ -430,7 +431,7 @@ views:
                       service: hue.activate_scene
                       haptic: medium
                       service_data:
-                        entity_id: scene.adams_bedroom_dimmed
+                        entity_id: scene.bedroom_dimmed
                     styles:
                       card:
                         - border-radius: 24px
@@ -451,7 +452,7 @@ views:
                       service: hue.activate_scene
                       haptic: medium
                       service_data:
-                        entity_id: scene.adams_bedroom_energize
+                        entity_id: scene.bedroom_energize
                     styles:
                       card:
                         - border-radius: 24px
@@ -800,96 +801,93 @@ views:
                     - background-color: var(--light-gray-alt)
             columns: 4
           - type: custom:button-card
-            name: Remote
-            show_icon: false
-            tap_action:
-              action: navigate
-              navigation_path: /lovelace/remote
-            styles:
-              card:
-                - background: none
-                - border-radius: 24px
-                - color: var(--contrast20)
-                - margin-top: 8px
-                - padding: 18px 0px
-                - font-size: 16px
-                - border: 2px solid var(--contrast5)
-  - title: Remote
-    path: remote
-    icon: mdi:remote-tv
-    subview: true
-    type: custom:vertical-layout
-    badges: []
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: custom:mini-media-player
             entity: media_player.bedroom_nvidia_shield
-            hide:
-              power: true
-              volume: true
-              info: false
-              source: true
-              icon: true
-            name: Bedroom TV
-            artwork: cover-fit
-            source: full
-          - square: true
-            type: grid
-            cards:
-              - type: custom:button-card
-                icon: mdi:home
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.home
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:youtube
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.open_youtube
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:plex
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.open_plex
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:twitch
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.open_twitch
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-            columns: 4
+            name: >
+              [[[
+
+              if (entity.attributes.app_name == "Twitch") return
+              entity.attributes.app_name;
+
+              if (entity.attributes.app_name == "YouTube") return
+              entity.attributes.app_name;
+
+              if (entity.attributes.app_name == "Plex") return
+              entity.attributes.app_name;
+
+              if (entity.attributes.app_name == "Android TV Launcher") return
+              entity.attributes.app_name;
+
+              else return entity.state.charAt(0).toUpperCase() +
+              entity.state.slice(1);
+
+              ]]]
+            label: NVIDIA Shield TV
+            show_entity_picture: true
+            show_label: true
+            entity_picture: >
+              [[[ if (entity.attributes.app_name == "Twitch") return
+              "/local/twitch.png"; if (entity.attributes.app_name == "YouTube")
+              return "/local/youtube.png"; if (entity.attributes.app_name ==
+              "Plex") return "/local/plex.png"; if (entity.attributes.app_name
+              == "Android TV Launcher") return "/local/launcher.png"; else
+              return "/local/off.png"; ]]]
+            styles:
+              grid:
+                - grid-template-areas: '"i gutter n"'
+                - grid-template-columns: min-content 24px 1fr
+              card:
+                - background: >
+                    [[[ if (entity.attributes.app_name == "Twitch") return
+                    "rgba(169,112,255,var(--color-tint))"; if
+                    (entity.attributes.app_name == "YouTube") return
+                    "rgba(255,0,0,var(--color-tint))"; if
+                    (entity.attributes.app_name == "Plex") return
+                    "rgba(229,160,13,var(--color-tint))"; if
+                    (entity.attributes.app_name == "Android TV Launcher") return
+                    "rgba(13,123,229,var(--color-tint))"; else return
+                    "var(--contrast2)"; ]]]
+                - padding: 24px
+                - '--mdc-ripple-press-opacity': 0
+              icon:
+                - width: 70px
+                - height: 70px
+                - border-radius: 16px
+                - border: >
+                    [[[ if (entity.attributes.app_name == "Twitch") return "5px
+                    solid rgba(169,112,255,0.5)"; if (entity.attributes.app_name
+                    == "YouTube") return "5px solid rgba(255,0,0,0.5)"; if
+                    (entity.attributes.app_name == "Plex") return "5px solid
+                    rgba(229,160,13,0.5)"; if (entity.attributes.app_name ==
+                    "Android TV Launcher") return "5px solid
+                    rgba(13,123,229,0.5)"; else return "5px solid
+                    var(--contrast4)"; ]]]
+              entity_picture:
+                - padding: 10px
+              label:
+                - font-size: 12px
+                - color: >
+                    [[[ if (entity.attributes.app_name == "Twitch") return
+                    "var(--purple-alt)"; if (entity.attributes.app_name ==
+                    "YouTube") return "var(--red-alt)"; if
+                    (entity.attributes.app_name == "Plex") return
+                    "var(--orange-alt)"; if (entity.attributes.app_name ==
+                    "Android TV Launcher") return "var(--blue-alt)"; else return
+                    "var(--contrast8)"; ]]]
+                - position: absolute
+                - top: 80px
+                - left: 140px
+              name:
+                - font-size: 16px
+                - color: var(--contrast20)
+                - position: absolute
+                - width: 100%
+                - top: 45px
+                - left: 140px
+                - text-align: left
+            tap_action:
+              action: call-service
+              service: script.turn_on_nvidia_shield_2
+              haptic: medium
           - square: true
             type: grid
             cards:
@@ -905,7 +903,12 @@ views:
                     - border-radius: 24px
                     - background-color: var(--light-gray)
                   icon:
-                    - color: var(--black)
+                    - color: var(--contrast12)
+                  img_cell:
+                    - border-radius: 100%
+                    - width: 50px
+                    - height: 50px
+                    - background-color: var(--light-gray-alt)
               - type: custom:button-card
                 icon: mdi:pause
                 aspect_ratio: 1/1
@@ -918,99 +921,12 @@ views:
                     - border-radius: 24px
                     - background-color: var(--light-gray)
                   icon:
-                    - color: var(--black)
-            columns: 2
-      - type: vertical-stack
-        cards:
-          - square: true
-            type: grid
-            cards:
-              - type: custom:button-card
-                icon: mdi:keyboard-backspace
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.tv_navigate_back
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:chevron-up
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.tv_navigate_up
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:volume-plus
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.tv_volume_plus
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-            columns: 3
-          - square: true
-            type: grid
-            cards:
-              - type: custom:button-card
-                icon: mdi:chevron-left
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.tv_navigate_left
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:circle-medium
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.tv_select
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:chevron-right
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.tv_navigate_right
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
-            columns: 3
-          - square: true
-            type: grid
-            cards:
+                    - color: var(--contrast12)
+                  img_cell:
+                    - border-radius: 100%
+                    - width: 50px
+                    - height: 50px
+                    - background-color: var(--light-gray-alt)
               - type: custom:button-card
                 icon: mdi:volume-mute
                 aspect_ratio: 1/1
@@ -1023,20 +939,12 @@ views:
                     - border-radius: 24px
                     - background-color: var(--light-gray)
                   icon:
-                    - color: var(--black)
-              - type: custom:button-card
-                icon: mdi:chevron-down
-                aspect_ratio: 1/1
-                tap_action:
-                  action: call-service
-                  service: script.tv_navigate_down
-                  haptic: medium
-                styles:
-                  card:
-                    - border-radius: 24px
-                    - background-color: var(--light-gray)
-                  icon:
-                    - color: var(--black)
+                    - color: var(--contrast12)
+                  img_cell:
+                    - border-radius: 100%
+                    - width: 50px
+                    - height: 50px
+                    - background-color: var(--light-gray-alt)
               - type: custom:button-card
                 icon: mdi:volume-minus
                 aspect_ratio: 1/1
@@ -1049,8 +957,600 @@ views:
                     - border-radius: 24px
                     - background-color: var(--light-gray)
                   icon:
-                    - color: var(--black)
+                    - color: var(--contrast12)
+                  img_cell:
+                    - border-radius: 100%
+                    - width: 50px
+                    - height: 50px
+                    - background-color: var(--light-gray-alt)
+              - type: custom:button-card
+                icon: mdi:volume-plus
+                aspect_ratio: 1/1
+                tap_action:
+                  action: call-service
+                  service: script.tv_volume_plus
+                  haptic: medium
+                styles:
+                  card:
+                    - border-radius: 24px
+                    - background-color: var(--light-gray)
+                  icon:
+                    - color: var(--contrast12)
+                  img_cell:
+                    - border-radius: 100%
+                    - width: 50px
+                    - height: 50px
+                    - background-color: var(--light-gray-alt)
+            columns: 5
+  - title: Kitchen
+    path: kitchen
+    icon: ''
+    type: custom:vertical-layout
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:button-card
+            name: Kitchen
+            custom_fields:
+              badge:
+                card:
+                  type: custom:button-card
+                  name: >-
+                    [[[ return 'Temperature: ' +
+                    states['sensor.kitchen_temperature'].state + ' °C' ]]]
+                  show_label: true
+                  show_icon: false
+                  entity: sensor.bedroom_monitor_temperature
+                  tap_action:
+                    action: more-info
+                    haptic: medium
+                  styles:
+                    grid:
+                      - grid-template-areas: '"n gutter l"'
+                      - grid-template-columns: min-content 5px min-content
+                      - grid-template-rows: min-content
+                    card:
+                      - padding: 6px 10px
+                      - font-size: 12px
+                      - line-height: 18px
+                      - font-weight: 500
+                      - background: var(--contrast20)
+                    name:
+                      - color: var(--contrast1)
+                    label:
+                      - color: var(--contrast12)
+            styles:
+              grid:
+                - grid-template-areas: '"n" "badge"'
+              card:
+                - background: none
+                - padding: 16px 0
+                - '--mdc-ripple-press-opacity': 0
+              name:
+                - font-size: 48px
+                - color: var(--contrast20)
+              custom_fields:
+                badge:
+                  - margin: 16px auto 0 auto
+                  - '--mdc-ripple-press-opacity': 0.5
+          - type: custom:swipe-card
+            card_width: calc(100% - 48px)
+            start_card: 1
+            reset_after: 10
+            parameters:
+              effect: slide
+              centeredSlides: false
+              slidesPerView: auto
+              spaceBetween: 16
+              initialSlide: 0
+              pagination:
+                type: bullets
+            cards:
+              - type: custom:button-card
+                name: '[[[return states["sensor.kitchen_air_quality_score"].state]]]'
+                styles:
+                  grid:
+                    - grid-template-areas: '"n max-score" "l l"'
+                    - grid-template-columns: min-content min-content
+                  name:
+                    - font-size: 40px
+                    - color: var(--contrast20)
+                    - position: absolute
+                    - top: 100px
+                    - left: 12px
+                  card:
+                    - border-radius: 24px
+                    - padding: 35px 0 6px 16px
+                    - box-sizing: border-box
+                    - background: var(--light-gray)
+                    - box-shadow: none
+                    - width: 155px
+                    - height: 155px
+                  label:
+                    - justify-self: start
+                    - font-size: 14px
+                    - color: var(--contrast10)
+                    - margin-top: '-75px'
+                  custom_fields:
+                    max-score:
+                      - font-size: 15px
+                      - color: var(--contrast9)
+                      - position: absolute
+                      - top: 120px
+                      - left: 55px
+                label: Air Quality Score
+                custom_fields:
+                  max-score: '&nbsp;/100'
+                show_label: true
+                tap_action:
+                  action: none
+                  haptic: medium
+              - type: sensor
+                entity: sensor.kitchen_humidity
+                hours_to_show: 24
+                detail: 1
+                graph: line
+                name: Humidity
+                icon: none
+                card_mod:
+                  class: graph
+              - type: sensor
+                entity: sensor.kitchen_carbon_dioxide
+                hours_to_show: 24
+                detail: 1
+                graph: line
+                name: Carbon Dioxide
+                icon: none
+                card_mod:
+                  class: graph
+              - type: sensor
+                entity: sensor.kitchen_pm2_5
+                hours_to_show: 24
+                detail: 1
+                graph: line
+                name: Dust/Particulate
+                icon: none
+                card_mod:
+                  class: graph
+              - type: sensor
+                entity: sensor.kitchen_volatile_organic_compounds
+                hours_to_show: 24
+                detail: 1
+                graph: line
+                name: Volatile Organic Compounds
+                icon: none
+                card_mod:
+                  class: graph
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-title-card
+            title: Lights
+            alignment: center
+          - square: false
+            type: grid
+            cards:
+              - type: custom:button-card
+                name: Kitchen
+                icon: hue:pendant-round
+                entity: light.kitchen
+                tap_action:
+                  action: toggle
+                  haptic: medium
+                hold_action:
+                  action: more-info
+                  haptic: medium
+                custom_fields:
+                  slider:
+                    card:
+                      type: custom:my-slider-v2
+                      entity: light.kitchen
+                      colorMode: brightness
+                      styles:
+                        container:
+                          - background: none
+                          - border-radius: 100px
+                          - overflow: visible
+                        card:
+                          - height: 16px
+                          - padding: 0 8px
+                          - background: |
+                              [[[
+                                if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                                else return "var(--contrast4)";
+                              ]]]
+                        track:
+                          - overflow: visible
+                          - background: none
+                        progress:
+                          - background: none
+                        thumb:
+                          - background: |
+                              [[[
+                                if (entity.state == "on") return "var(--black)";
+                                if (entity.state == "off") return "var(--contrast20)";
+                                else return "var(--contrast8)";
+                              ]]]
+                          - top: 2px
+                          - right: '-6px'
+                          - height: 12px
+                          - width: 12px
+                          - border-radius: 100px
+                styles:
+                  grid:
+                    - grid-template-areas: '"i" "n" "slider"'
+                    - grid-template-columns: 1fr
+                    - grid-template-rows: 1fr min-content min-content
+                  card:
+                    - background: var(--contrast2)
+                    - padding: 16px
+                    - '--mdc-ripple-press-opacity': 0
+                  img_cell:
+                    - justify-self: start
+                    - width: 24px
+                  icon:
+                    - width: 24px
+                    - height: 24px
+                    - color: var(--contrast8)
+                  name:
+                    - justify-self: start
+                    - font-size: 14px
+                    - margin: 4px 0 12px 0
+                    - color: var(--contrast8)
+                state:
+                  - value: 'on'
+                    styles:
+                      card:
+                        - background: var(--yellow)
+                      icon:
+                        - color: var(--black)
+                      name:
+                        - color: var(--black)
+                  - value: 'off'
+                    styles:
+                      icon:
+                        - color: var(--contrast20)
+                      name:
+                        - color: var(--contrast20)
+              - square: true
+                columns: 2
+                type: grid
+                cards:
+                  - type: custom:button-card
+                    icon: mdi:lightbulb-on-50
+                    aspect_ratio: 1/1
+                    tap_action:
+                      action: call-service
+                      service: hue.activate_scene
+                      haptic: medium
+                      service_data:
+                        entity_id: scene.kitchen_dimmed
+                    styles:
+                      card:
+                        - border-radius: 24px
+                        - background-color: var(--yellow)
+                      icon:
+                        - color: var(--black)
+                      img_cell:
+                        - border-radius: 100%
+                        - width: 75px
+                        - height: 75px
+                        - top: 0
+                        - background-color: var(--yellow-alt)
+                  - type: custom:button-card
+                    icon: mdi:lightbulb-on
+                    aspect_ratio: 1/1
+                    tap_action:
+                      action: call-service
+                      service: hue.activate_scene
+                      haptic: medium
+                      service_data:
+                        entity_id: scene.kitchen_energize
+                    styles:
+                      card:
+                        - border-radius: 24px
+                        - background-color: var(--yellow)
+                      icon:
+                        - color: var(--black)
+                      img_cell:
+                        - border-radius: 100%
+                        - width: 75px
+                        - height: 75px
+                        - top: 0
+                        - background-color: var(--yellow-alt)
+            columns: 2
+          - type: custom:button-card
+            name: All Lights
+            show_icon: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/lights
+            styles:
+              card:
+                - background: none
+                - border-radius: 24px
+                - color: var(--contrast20)
+                - margin-top: 8px
+                - padding: 18px 0px
+                - font-size: 16px
+                - border: 2px solid var(--contrast5)
+      - type: vertical-stack
+        cards:
+          - type: custom:mushroom-title-card
+            title: Devices
+            alignment: center
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: sensor.hp_envy_4520_series
+                icon: mdi
+                name: >
+                  [[[return entity.state.charAt(0).toUpperCase() +
+                  entity.state.slice(1);]]]
+                styles:
+                  name:
+                    - font-size: 30px
+                    - color: var(--contrast20)
+                    - margin-top: 50px
+                    - margin-left: '-74px'
+                  card:
+                    - border-radius: 24px
+                    - padding: 35px 0 6px 16px
+                    - box-sizing: border-box
+                    - background: var(--light-gray)
+                    - box-shadow: none
+                    - width: 142px
+                    - height: 142px
+                  label:
+                    - justify-self: start
+                    - font-size: 16px
+                    - color: var(--contrast10)
+                    - margin-top: '-220px'
+                label: Printer
+                show_label: true
+                show_icon: true
+                tap_action:
+                  action: none
+                  haptic: medium
+              - type: custom:bar-card
+                height: 50px
+                max: 100
+                min: 0
+                padding: 2px
+                title_position: bottom
+                icon_position: inside
+                width: 75%
+                direction: right
+                columns: 1
+                entities:
+                  - color: black
+                    entity: sensor.hp_envy_4520_series_black_ink
+                    name: Black
+                    positions:
+                      icon: inside
+                      indicator: inside
+                      name: 'off'
+                  - color: var(--blue)
+                    entity: sensor.hp_envy_4520_series_tri_color_ink
+                    name: Tri-Colour
+                    positions:
+                      icon: inside
+                      indicator: inside
+                      name: 'off'
+                unit_of_measurement: '%'
+          - square: false
+            type: grid
+            cards:
+              - type: custom:button-card
+                aspect_ratio: 1/1
+                styles:
+                  name:
+                    - color: black
+                    - font-size: 0.9em
+                    - height: 30px
+                    - width: 100%
+                    - text-align: left
+                    - margin: 55px 0 0 25px
+                  state:
+                    - color: white
+                  custom_fields:
+                    second:
+                      - position: absolute
+                      - left: 55%
+                      - top: 6%
+                      - height: 60px
+                      - width: 60px
+                      - font-size: 20px
+                      - line-height: 20px
+                  label: test
+                  grid:
+                    - grid-template-areas: '" i s " " n n " " notification notification"'
+                    - grid-template-rows: 1fr 1fr 1fr
+                    - grid-template-columns: 1fr 1fr
+                state:
+                  - value: 'on'
+                    styles:
+                      card:
+                        - background-color: var(--green)
+                        - border-radius: 24px
+                      img_cell:
+                        - border-radius: 100%
+                        - width: 50px
+                        - height: 50px
+                        - top: 5px
+                        - background-color: var(--green-alt)
+                      icon:
+                        - width: 35px
+                        - height: 35px
+                        - color: var(--black)
+                  - value: 'off'
+                    styles:
+                      card:
+                        - background-color: var(--light-gray)
+                        - border-radius: 24px
+                      img_cell:
+                        - border-radius: 100%
+                        - width: 50px
+                        - height: 50px
+                        - top: 5px
+                        - background-color: var(--light-gray-alt)
+                      icon:
+                        - width: 35px
+                        - height: 35px
+                        - color: var(--black)
+                custom_fields:
+                  second: |
+                    [[[
+                        if (states['switch.microwave'].state == 'on')
+                          return `<ha-icon
+                    icon="mdi:toggle-switch-outline"
+                    style="width: 40px; height: 40px; color: white; ">
+                    </ha-icon>`
+                        return `<ha-icon
+                    icon="mdi:toggle-switch-off"
+                    style="width: 40px; height: 40px; color: black ;">
+                    </ha-icon>`;
+                      ]]]
+                entity: switch.microwave
+                name: Microwave
+                icon: mdi:microwave
+                hold_action:
+                  action: more-info
+              - type: grid
+                cards: []
+              - type: grid
+                cards: []
+              - square: false
+                columns: 1
+                type: grid
+                cards:
+                  - type: custom:button-card
+                    aspect_ratio: 3.5/1
+                    styles:
+                      name:
+                        - color: black
+                        - font-size: 0.7em
+                        - height: 35px
+                        - width: 100%
+                        - text-align: left
+                        - margin: 8px 0 0 117px
+                      state:
+                        - color: white
+                      custom_fields:
+                        second:
+                          - position: absolute
+                          - left: 2%
+                          - top: 0%
+                          - height: 60px
+                          - width: 60px
+                          - font-size: 20px
+                          - line-height: 20px
+                      label: test
+                      grid:
+                        - grid-template-areas: '" i s " " n n " " notification notification"'
+                        - grid-template-rows: 1fr 1fr 1fr
+                        - grid-template-columns: 1fr 1fr
+                    state:
+                      - value: 'on'
+                        styles:
+                          card:
+                            - background-color: var(--green)
+                            - border-radius: 24px
+                      - value: 'off'
+                        styles:
+                          card:
+                            - background-color: var(--light-gray)
+                            - border-radius: 24px
+                    custom_fields:
+                      second: |
+                        [[[
+                            if (states['automation.turn_on_microwave_at_7am'].state == 'on')
+                              return `<ha-icon
+                        icon="mdi:toggle-switch-outline"
+                        style="width: 40px; height: 40px; color: white; ">
+                        </ha-icon>`
+                            return `<ha-icon
+                        icon="mdi:toggle-switch-off"
+                        style="width: 40px; height: 40px; color: black ;">
+                        </ha-icon>`;
+                          ]]]
+                    entity: automation.turn_on_microwave_at_7am
+                    name: Automation
+                    show_name: true
+                    show_icon: false
+                    icon: mdi:radiator
+                    tap_action:
+                      action: call-service
+                      service: script.toggle_microwave_automation_on_off
+                    hold_action:
+                      action: more-info
             columns: 3
+          - type: custom:button-card
+            name: All Devices
+            show_icon: false
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/devices
+            styles:
+              card:
+                - background: none
+                - border-radius: 24px
+                - color: var(--contrast20)
+                - margin-top: 8px
+                - padding: 18px 0px
+                - font-size: 16px
+                - border: 2px solid var(--contrast5)
+  - title: Livingroom
+    path: livingroom
+    type: custom:vertical-layout
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:button-card
+            name: Kitchen
+            custom_fields:
+              badge:
+                card:
+                  type: custom:button-card
+                  name: >-
+                    [[[ return 'Temperature: ' +
+                    states['sensor.kitchen_temperature'].state + ' °C' ]]]
+                  show_label: true
+                  show_icon: false
+                  entity: sensor.bedroom_monitor_temperature
+                  tap_action:
+                    action: more-info
+                    haptic: medium
+                  styles:
+                    grid:
+                      - grid-template-areas: '"n gutter l"'
+                      - grid-template-columns: min-content 5px min-content
+                      - grid-template-rows: min-content
+                    card:
+                      - padding: 6px 10px
+                      - font-size: 12px
+                      - line-height: 18px
+                      - font-weight: 500
+                      - background: var(--contrast20)
+                    name:
+                      - color: var(--contrast1)
+                    label:
+                      - color: var(--contrast12)
+            styles:
+              grid:
+                - grid-template-areas: '"n" "badge"'
+              card:
+                - background: none
+                - padding: 16px 0
+                - '--mdc-ripple-press-opacity': 0
+              name:
+                - font-size: 48px
+                - color: var(--contrast20)
+              custom_fields:
+                badge:
+                  - margin: 16px auto 0 auto
+                  - '--mdc-ripple-press-opacity': 0.5
   - title: Lights
     path: lights
     icon: hue:bulb-classic
@@ -1065,7 +1565,7 @@ views:
             name: Ambient Lights
             aspect_ratio: 1/1
             icon: hue:desk-lamp
-            entity: light.adams_bedroom_ambient_lights
+            entity: light.bedroom_ambient_lights
             tap_action:
               action: toggle
               haptic: medium
@@ -1169,7 +1669,7 @@ views:
                   service: hue.activate_scene
                   haptic: medium
                   service_data:
-                    entity_id: scene.adams_bedroom_ambient_lights_nightlight
+                    entity_id: scene.bedroom_ambient_lights_nightlight
                 styles:
                   card:
                     - border-radius: 24px
@@ -1190,7 +1690,7 @@ views:
                   service: hue.activate_scene
                   haptic: medium
                   service_data:
-                    entity_id: scene.adams_bedroom_ambient_lights_energize
+                    entity_id: scene.bedroom_ambient_lights_energize
                 styles:
                   card:
                     - border-radius: 24px
@@ -1211,7 +1711,7 @@ views:
                   service: hue.activate_scene
                   haptic: medium
                   service_data:
-                    entity_id: scene.adams_bedroom_ambient_lights_arctic_aurora
+                    entity_id: scene.bedroom_ambient_lights_arctic_aurora
                 styles:
                   card:
                     - border-radius: 24px
@@ -1232,7 +1732,7 @@ views:
                   service: hue.activate_scene
                   haptic: medium
                   service_data:
-                    entity_id: scene.adams_bedroom_ambient_lights_ocean_dawn
+                    entity_id: scene.bedroom_ambient_lights_ocean_dawn
                 styles:
                   card:
                     - border-radius: 24px
@@ -1245,14 +1745,10 @@ views:
                     - height: 75px
                     - top: 0
                     - background-color: var(--yellow-alt)
-        columns: 2
-      - square: false
-        type: grid
-        cards:
           - type: custom:button-card
             name: Ceiling Light
             icon: hue:pendant-round
-            entity: light.adams_bedroom
+            entity: light.bedroom
             tap_action:
               action: toggle
               haptic: medium
@@ -1263,7 +1759,7 @@ views:
               slider:
                 card:
                   type: custom:my-slider-v2
-                  entity: light.adams_bedroom
+                  entity: light.bedroom
                   colorMode: brightness
                   styles:
                     container:
@@ -1343,7 +1839,7 @@ views:
                   service: hue.activate_scene
                   haptic: medium
                   service_data:
-                    entity_id: scene.adams_bedroom_dimmed
+                    entity_id: scene.bedroom_dimmed
                 styles:
                   card:
                     - border-radius: 24px
@@ -1364,7 +1860,7 @@ views:
                   service: hue.activate_scene
                   haptic: medium
                   service_data:
-                    entity_id: scene.adams_bedroom_energize
+                    entity_id: scene.bedroom_energize
                 styles:
                   card:
                     - border-radius: 24px
@@ -1992,6 +2488,8 @@ views:
                     - color: var(--contrast20)
                   name:
                     - color: var(--contrast20)
+          - type: grid
+            cards: []
           - square: false
             columns: 1
             type: grid
