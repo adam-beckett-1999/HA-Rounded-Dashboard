@@ -1,4 +1,4 @@
-# HA Dashboard
+# HA Rounded Dashboard
 This is my adaptation of the Rounded Dashboard created by LE0N on the Home Assistant forums. The original theme & styling can be found here: [Rounded Dashboard](https://community.home-assistant.io/t/rounded-dashboard-guide/543043)
 
 ---
