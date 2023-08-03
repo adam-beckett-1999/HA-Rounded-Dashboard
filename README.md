@@ -178,4 +178,4 @@ Shows the current status of the printer in a custom button card, alongside a bar
 
 [YAML Code](/cards/printer-info-card.yaml)
 
-![image info](images/printer-info-card.gif)
+![image info](images/printer-info-card.png)
