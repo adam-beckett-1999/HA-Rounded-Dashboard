@@ -1,0 +1,4 @@
+*.yml linguist-detectable
+*.yaml linguist-detectable
+*.png linguist-detectable
+*.gif linguist-detectable
